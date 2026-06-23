@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Integration Requirement Form</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg,#e0eafc,#cfdef3);
+        padding:20px;
+    }
+
+    .container{
+        max-width: 950px;
+        margin:auto;
+        background:#fff;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .header{
+        background: linear-gradient(90deg,#4b6cb7,#182848);
+        color:#fff;
+        padding:20px;
+        text-align:center;
+    }
+
+    .header h1{
+        margin:0;
+        font-size:24px;
+        letter-spacing:1px;
+    }
+
+    .content{
+        padding:25px;
+    }
+
+    .card{
+        background:#ffffff;
+        border:1px solid #eee;
+        border-radius:12px;
+        padding:18px;
+        margin-bottom:18px;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-2px);
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3{
+        margin-top:0;
+        font-size:16px;
+        color:#fff;
+        background: linear-gradient(90deg,#667eea,#764ba2);
+        padding:8px 12px;
+        border-radius:8px;
+    }
+
+    label{
+        display:block;
+        margin-top:10px;
+        font-weight:600;
+        color:#333;
+        font-size:14px;
+    }
+
+    input[type="text"]{
+        width:100%;
+        padding:10px;
+        margin-top:5px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        outline:none;
+        transition:0.2s;
+    }
+
+    input[type="text"]:focus{
+        border-color:#667eea;
+        box-shadow:0 0 5px rgba(102,126,234,0.4);
+    }
+
+    .options{
+        margin-top:8px;
+        padding-left:10px;
+    }
+
+    .options label{
+        font-weight:400;
+        margin:6px 0;
+        display:block;
+        cursor:pointer;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]{
+        margin-right:6px;
+        transform:scale(1.1);
+    }
+
+    .btn{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:10px;
+        background: linear-gradient(90deg,#00c6ff,#0072ff);
+        color:#fff;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .btn:hover{
+        background: linear-gradient(90deg,#0072ff,#00c6ff);
+        transform:scale(1.02);
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+    }
+
+    @media(max-width:768px){
+        .grid{
+            grid-template-columns:1fr;
+        }
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Integration Requirement Form</h1>
+    </div>
+
+    <div class="content">
+
+        <!-- Section 1 -->
+        <div class="card">
+            <h3>Basic Details</h3>
+
+            <div class="grid">
+                <div>
+                    <label>Customer Name *</label>
+                    <input type="text" id="customerName">
+                </div>
+
+                <div>
+                    <label>Software / Portal / Database *</label>
+                    <input type="text" id="software">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <h3>Integration Details</h3>
+
+            <label>Project Manager *</label>
+            <input type="text" id="pm">
+
+            <label>Sales Person *</label>
+            <input type="text" id="sales">
+
+            <label>Integration Type *</label>
+            <div class="options">
+                <label><input type="radio" name="integration"> Import (Software → Tally)</label>
+                <label><input type="radio" name="integration"> Export (Tally → Software)</label>
+                <label><input type="radio" name="integration"> Import (Database → Tally)</label>
+                <label><input type="radio" name="integration"> Export (Database → Tally)</label>
+                <label><input type="radio" name="integration"> Other</label>
+            </div>
+
+            <label>Data Flow *</label>
+            <div class="options">
+                <label><input type="radio" name="flow"> Software → Tally</label>
+                <label><input type="radio" name="flow"> Tally → Software</label>
+                <label><input type="radio" name="flow"> Database → Tally</label>
+                <label><input type="radio" name="flow"> Tally → Database</label>
+                <label><input type="radio" name="flow"> Other</label>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <h3>Transaction Details</h3>
+
+            <label>Transaction Types Required</label>
+            <div class="options">
+                <label><input type="checkbox"> Sales</label>
+                <label><input type="checkbox"> Purchase</label>
+                <label><input type="checkbox"> Payment</label>
+                <label><input type="checkbox"> Receipt</label>
+                <label><input type="checkbox"> Journal</label>
+                <label><input type="checkbox"> Debit Note</label>
+                <label><input type="checkbox"> Credit Note</label>
+                <label><input type="checkbox"> Other</label>
+            </div>
+
+            <label>E-Invoice Required</label>
+            <div class="options">
+                <label><input type="radio" name="einvoice"> Yes</label>
+                <label><input type="radio" name="einvoice"> No</label>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <h3>Master Data</h3>
+
+            <div class="options">
+                <label><input type="checkbox"> Party Master</label>
+                <label><input type="checkbox"> Stock Item Master</label>
+                <label><input type="checkbox"> Other</label>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <h3>Additional Details</h3>
+
+            <label>Currency</label>
+            <div class="options">
+                <label><input type="radio" name="currency"> INR</label>
+                <label><input type="radio" name="currency"> Multi-Currency</label>
+            </div>
+
+            <label>Company Type</label>
+            <div class="options">
+                <label><input type="radio" name="company"> Single Company</label>
+                <label><input type="radio" name="company"> Multiple Companies</label>
+            </div>
+
+            <label>Transaction Nature</label>
+            <div class="options">
+                <label><input type="radio" name="nature"> Accounting</label>
+                <label><input type="radio" name="nature"> Inventory</label>
+                <label><input type="radio" name="nature"> Both</label>
+            </div>
+
+            <label>Voucher Operation</label>
+            <div class="options">
+                <label><input type="radio" name="voucher"> Creation Only</label>
+                <label><input type="radio" name="voucher"> Modification Only</label>
+                <label><input type="radio" name="voucher"> Both</label>
+            </div>
+        </div>
+
+        <button class="btn" onclick="submitForm()">Submit Form</button>
+
+    </div>
+</div>
+
+<script>
+function submitForm() {
+
+    let data = {
+        customerName: document.getElementById("customerName").value,
+        software: document.getElementById("software").value,
+        projectManager: document.getElementById("pm").value,
+        salesPerson: document.getElementById("sales").value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbw5-8pOR4cQNMA--LO39e4abJc1m27m7pTOcA2X15Vj-xA7hr10bR2dVE2Z54DE_TvRvg/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(res => {
+        alert("Form Submitted Successfully ✅");
+
+        document.getElementById("customerName").value = "";
+        document.getElementById("software").value = "";
+        document.getElementById("pm").value = "";
+        document.getElementById("sales").value = "";
+    })
+    .catch(err => {
+        alert("Error ❌ Check API / Script");
+        console.log(err);
+    });
+
+}
+</script>
+
+</body>
+</html>
